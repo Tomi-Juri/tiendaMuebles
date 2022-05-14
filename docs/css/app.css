@@ -1,0 +1,526 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;  /* 1REM = 10PX */
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*GLOBALES*/
+
+body {
+    font-family:'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+h1, h2, h3 {    /* lo que hace es tomar los h1, h2 y h3 y modificarlos (ahoora tener que hacer esto: h1 {}, h2{}, h3{} 3 veces x separado */
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 2rem 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 5rem;
+    }
+}
+
+h2 {
+    font-size: 3.8rem;
+}
+
+@media (min-width: 768px) {
+    
+    h2 {
+        font-size: 4rem;
+    }
+    
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+@media (min-width: 768px) {
+    h3 {
+        font-size: 3rem;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {   /* crea la imagen de manera responsive */
+    max-width: 100%; /*maximiza el espacio que ocupa*/
+    display: block;  /* hace que la imagen y el boton este juntos*/
+}
+
+.boton {
+    background-color: #8cbc00;
+    display: block;  /* hace q tome todo el ancho disponible  */
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    transition: background-color .3s ease-out;
+    text-align: center;
+    border: none;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+    
+}
+
+.boton:hover{
+    background-color: #769c02;
+    cursor: pointer;   /* agrega una manito cuando se apoya en algun lugar con enlace  */
+}
+
+/* Uitlidades  */
+
+.text-center {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    
+    .max-width-30 {
+        max-width: 30rem;
+    }
+    
+}
+
+
+/* Headder y navegacion*/
+
+.nombre-sitio {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.nombre-sitio span {
+    color: #037bc0;
+}
+
+.nav-principal {
+    padding: 2rem 0rem 2rem 0rem;   
+    display: flex;  /* me da acceso a justify content y align items, sin displayn flex no funcionaria*/
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+@media (min-width: 768px) {
+    
+    .nav-principal {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+}
+
+.contenedor-navegacion{
+    border-top: 1px solid #e1e1e1;   /*el top agrega solo borde arriba*/
+}
+
+.contenedor {
+    max-width: 120rem;   /* para haer q la linea de la barra de navegacion llegue hasta 1200px  */
+    margin: 0rem auto;    /* forma corta de un margin, auto permite que este a la misma distancia  */
+}
+
+.hero {
+    background-image: url(../img/principal.jpg);  /* para salir de mi archivo css e ir a las imagener uso ../  */
+    height: 25rem;                                /* si yo no loco height, la foto no se vera, ya que cada box debe estar conformado por algo*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        height: 55rem;   
+    }
+    
+}
+/* Categorias*/
+
+.categorias {
+    padding: 5rem 0 5rem 0;
+}
+
+.categoria {
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .categoria {
+        margin-bottom: 0;
+    }
+    
+}
+
+.categorias h2{
+    text-align:center;
+}
+
+.categoria img {
+    width: 100%;
+}
+
+.categoria a{
+    text-align: center;
+    display: block ;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.categoria a:hover{  /* lo que hace hover, es que al posicionarme sobre el elemnto elegido, puedan cambiar sus cracteristicas */
+    background-color: #037bc0;
+    color: #FFFFFF;  /* cuando me psociono sobre el hover, el color negro de la palabra cambioa a blanco */
+    border-bottom-right-radius: 1rem;  /* RADIUS: lo que hace es redondear el borde, yo puedo elegir si redondear todo el boton, o si solo las esquinas */
+}
+
+@media (min-width: 768px) {
+    .listado-categorias{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+    
+    }    
+}
+
+/* BLOQUE NOSOTROS  */
+
+.sobre-nosotros {
+    background-image: linear-gradient(to bottom, transparent 50%, #037bc0 50%, #037bc0 100% ), url(../img/nosotros.jpg);  /* se ve la imagen xq en la primer parte puse trsnaprente y en la otra no se ve xq hay un color encima */
+    background-position:center, top left ;
+    background-repeat: no-repeat;  /* para q la imagen no se siga repitiendo  */
+    background-size: 100%, 70rem;  /* me dice q muestre el linear gradient al 100%, y la imagen a 120 rem */
+}
+
+@media (min-width: 768px) {
+    .sobre-nosotros {
+        background-image: linear-gradient(to right, transparent 50%, #037bc0 50%, #037bc0 100% ), url(../img/nosotros.jpg);  /* se ve la imagen xq en la primer parte puse trsnaprente y en la otra no se ve xq hay un color encima */
+        padding: 10rem 0 10rem 0;  /* es igual a padding: 5rem 0 */
+        background-position:left center ;   
+        background-size: 100%, 120rem;  
+    }
+}
+
+.sobre-nosotros-grid {
+   display: grid;
+   grid-template-rows: repeat(2,1fr);
+}
+
+@media (min-width: 768px) {
+    .sobre-nosotros-grid {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: unset;  /* unset significa que no exista */
+        column-gap: 10rem;
+     }
+}
+
+/* flex-basis: 50%; define el tamaño del elemento, en este caso el txto  */
+
+.texto-nosotros {
+    grid-row: 2/3;
+    color: #FFFFFF; 
+    padding: 5rem;  
+}
+
+@media (min-width: 768px) {
+    .texto-nosotros {
+        grid-column: 2/3;  
+    }
+}
+
+/* LISTADO DE PRODUCTOS  */
+
+.contenido-principal {
+    padding-top: 5rem;
+}
+
+.producto {
+    background-color: #037bc0;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .producto {
+        margin-bottom: 0;
+    }  
+}
+
+.producto:last-of-type {
+    margin-bottom: 0;
+}
+
+.texto-producto {
+    text-align: center;
+    color: #FFFFFF;
+    padding: 2rem;
+}
+
+.texto-producto h3 {
+    margin: 0;
+}
+
+.texto-producto p {
+    margin: 0 0 .5rem 0;
+}
+
+.precio {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+@media (min-width: 768px) {
+    .listado-productos {
+        display: grid;
+        grid-template-columns: repeat(6,1fr);  /* a pesar de dividirlos en 6, habrab 7 lineas , ya q se cuentan la del inicio y la del final */
+        gap: 2rem;  
+    }
+    
+    .producto:nth-child(1) {
+        grid-column: 1 / 7;  /* tomara espacio desde la 1er columna 1 hasta la 7ma */
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    
+    .producto:nth-child(1) img {
+        height: 43rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .producto:nth-child(2) {
+        grid-column: 1 / 4;  
+    }
+    
+    .producto:nth-child(2) img, .producto:nth-child(3) img {
+        height: 30rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .producto:nth-child(3) {
+        grid-column: 4 / 7;  
+    }
+    
+    .producto:nth-child(4) {
+        grid-column: 1 / 3;  
+    }
+    
+    .producto:nth-child(5) {
+        grid-column: 3 / 5;  
+    }
+    
+    .producto:nth-child(6) {
+        grid-column: 5 / 7;  
+    }
+    
+}
+/* FOOTER */
+
+.sitio-footer {
+    border-top: 1px solid #7e8c94;
+    margin: 10rem 0 4rem 0;
+    padding: 4rem;
+    
+}
+
+.sitio-footer h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .sitio-footer h3 {
+        text-align: left;
+    }
+    .grid-footer {
+        display: grid;
+        grid-template-columns:repeat(3, 1fr);
+        gap: 2rem;
+    }
+    .grid-footer > div {
+        margin-bottom: 0;
+    }
+}
+
+.grid-footer > div {
+    margin-bottom: 2rem;
+}
+
+
+.footer-menu a {
+    display: block;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer-menu a {
+        text-align: left;
+    }
+}
+
+.ult-parrafo {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+
+/* NOSOTROS */
+
+.contenido-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));  /* lo q hace esto es q al achicarse la pagina web, cuando pase su minimo,
+                                                                    es decir, 25rem, automaticamente fraccionara todo a 1fr y se vera mejor */
+    column-gap: 2rem;
+}
+
+.info-nosotros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem;
+}
+
+@media (min-width: 768px) {
+    .info-nosotros {
+        padding: 0;
+    }
+}
+
+/* BLOG */
+
+@media (min-width: 768px) {
+    .contenedor-blog {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+    
+}
+.entrada {
+    border-bottom: 2px solid #7e8c94 ;
+    margin-bottom: 2rem;
+    padding-bottom: 4rem;
+}
+
+.entrada h2 {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .entrada h2{
+        text-align: left;
+    }
+    
+}
+.contenido-blog {
+    padding: 2rem;
+}
+
+.entrada:last-child {
+    border: none;   /* para sacarle el borde */
+}
+
+@media (min-width: 768px) {
+    .entrada-meta {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+}
+
+.entrada-meta p {
+    font-weight: 700;
+    
+}
+
+.entrada-meta span {
+    color: #037bc0;
+}
+
+/* ENTRADA */
+
+.contenido-entrada-blog {
+    width: 60rem;
+    margin: 0 auto;   /* para centrar  */
+}
+
+/* GALERIA */
+
+.galeria {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    } 
+}
+    
+.galeria img {
+    height: 40rem;
+    width: 40rem;
+    object-fit: cover ;  /* para que todas las imagenes se ajusten al tamaño indicado */
+
+}
+
+
+/* FORMULARIOS */
+
+.formulario {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.formulario fieldset {
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+.formulario legend {
+    background-color: #005485;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-transform: uppercase; 
+    font-weight: 900;
+    padding: 1rem;
+    margin-bottom: 4rem;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.campo label {
+    flex-basis: 10rem;  /* me pone todo en orden, en la misma linea */
+}
+
+.campo input:not([type="radio"]),  /* lo que hace esto, es tomar todos los input, MENOS , el de type radio */
+.campo textarea,
+.campo select {   
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+}
